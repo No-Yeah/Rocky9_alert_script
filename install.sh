@@ -186,6 +186,7 @@ chmod +x /etc/profile.d/sshd-login-telegram.sh
 
 # command alert 스크립트
 echo "making cmd alert sh..."
+touch /var/log/.cmd.log
 cat << 'EOF' > /root/bin/command-history-telegram.sh
 #!/bin/bash
 IDS=""
