@@ -259,3 +259,6 @@ change_value "ids" "${telegram_ids}" "/etc/bash.bash_logout"
 change_value "token" "${api_token}" "/etc/bash.bash_logout"
 
 systemctl restart command-history-telegram
+
+systemctl restart rsyslog
+source /etc/profile
