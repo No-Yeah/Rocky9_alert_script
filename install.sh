@@ -125,12 +125,13 @@ mkdir -p /root/bin
 # /etc/profile 설정 추가
 source /etc/profile
 rip_get=`echo $remoteip | wc -l`
+setcmd_get=`cat '/etc/profile' | grep "readonly PROMPT_COMMAND" | wc -l`
 
 echo "Checking environment..."
 
 sleep 1
 
-if [ $rip_get -eq 0 ]; then 
+if [ $rip_get -eq 0 ] || [ $setcmd_get -eq 0 ] ; then 
 echo "making /etc/profile good!!!"
 echo -e "remoteip=\$(hostname -I) \n
 if [[ -z \$remoteip ]]; then remoteip=localhost; fi \n
